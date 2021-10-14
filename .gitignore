@@ -41,8 +41,6 @@ yarn-debug.log*
 
 /tmp
 yarn.lock
-postcss.config.js
-babel.config.js
 .browserslistrc
 .gitattributes
 .idea
