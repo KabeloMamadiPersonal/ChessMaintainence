@@ -7532,3 +7532,75 @@ Processing by MembersController#show as HTML
 Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 4395)
 
 
+Started GET "/members/view_all" for ::1 at 2021-10-14 18:04:59 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"view_all"}
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."active" = ? ORDER BY "members"."rank" ASC[0m  [["active", 1]]
+  ↳ app/views/members/show.html.erb:11
+  Rendered members/show.html.erb within layouts/application (Duration: 11.2ms | Allocations: 6341)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 10857)
+Completed 200 OK in 31ms (Views: 21.4ms | ActiveRecord: 0.8ms | Allocations: 14239)
+
+
+Started GET "/members/view_all" for ::1 at 2021-10-14 18:05:00 +0200
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"view_all"}
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."active" = ? ORDER BY "members"."rank" ASC[0m  [["active", 1]]
+  ↳ app/views/members/show.html.erb:11
+  Rendered members/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3799)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 4255)
+
+
+Started DELETE "/members/4" for ::1 at 2021-10-14 18:05:02 +0200
+Processing by MembersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:27:in `destroy'
+  [1m[36mMember Update All (4.9ms)[0m  [1m[33mUPDATE "members" SET rank = rank - 1 WHERE (rank > 2)[0m
+  ↳ app/controllers/members_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/members_controller.rb:30:in `destroy'
+  [1m[36mMember Update (0.4ms)[0m  [1m[33mUPDATE "members" SET "active" = ?, "updated_at" = ? WHERE "members"."id" = ?[0m  [["active", 0], ["updated_at", "2021-10-14 16:05:02.954847"], ["id", 4]]
+  ↳ app/controllers/members_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/members_controller.rb:30:in `destroy'
+Redirected to http://localhost:3000/members/view_all
+Completed 302 Found in 23ms (ActiveRecord: 8.2ms | Allocations: 7584)
+
+
+Started GET "/members/view_all" for ::1 at 2021-10-14 18:05:02 +0200
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"view_all"}
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."active" = ? ORDER BY "members"."rank" ASC[0m  [["active", 1]]
+  ↳ app/views/members/show.html.erb:11
+  Rendered members/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 845)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3719)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 4165)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
