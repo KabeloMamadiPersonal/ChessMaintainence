@@ -1,0 +1,22 @@
+<%= form_for Match.new, url: log_match_path, method: :post do |f| %>
+  <h2> Log Match </h2>
+  <div class="field">
+    <%= f.label :first_member %><br>
+    <%= f.collection_select :first_member_id, Member.where(active: true), :id, :name %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :second_member %><br>
+    <%= f.collection_select :second_member_id, Member.where(active: true), :id, :name %>
+  </div>
+  <br/>
+  <p> Select 1 for first member, 2 for second member, 3 for draw</p>
+  <div class="field">
+    <%= f.label :winning_member_id %><br>
+    <%= f.number_field :winning_member_id %>
+  </div>
+  <br/>
+  <%= f.submit "Log Match" %>
+<% end %>
+<br/>
+<%= link_to 'Back', root_path%>

@@ -1,0 +1,26 @@
+<%= form_for @member, method: :post do |f| %>
+  <h2> New Member</h2>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name%>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname%>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email%>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.text_field :birthday%>
+  </div>
+  <br/>
+  <%= f.submit "Create Member" %>
+<% end %>
+<br/>
+<%= link_to 'Back', root_path%>

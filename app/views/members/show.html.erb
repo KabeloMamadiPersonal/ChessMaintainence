@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <th width="15%">Name and surname</th>
+    <th width="15%">Email address</th>
+    <th width="15%">Birthday</th>
+    <th width="15%">Number of club games played</th>
+    <th width="15%">Current rank</th>
+    <th width="15%">Actions</th>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td align="center"><%= member.name %> <%= member.surname %> </td>
+        <td align="center"><%= member.email %></td>
+        <td align="center"><%= member.birthday %></td>
+        <td align="center"><%= member.games_played %></td>
+        <td align="center"><%= member.rank %></td>
+        <td align="center"><%= link_to 'Edit', edit_member_path(member.id) %>
+           | <%= link_to 'Delete', member_path(member), method: :delete %>
+        </td>
+      </tr>
+    <% end%>
+  </tbody>
+</table>
+<br/>
+<%= link_to 'Back', root_path%>
