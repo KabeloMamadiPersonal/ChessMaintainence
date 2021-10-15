@@ -7604,3 +7604,46 @@ Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 4165)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/log_match" for 127.0.0.1 at 2021-10-15 06:33:34 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MembersController#log_match as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/log_match.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."active" = ?[0m  [["active", 1]]
+  ↳ app/views/members/log_match.html.erb:5
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."active" = ?[0m  [["active", 1]]
+  ↳ app/views/members/log_match.html.erb:10
+  Rendered members/log_match.html.erb within layouts/application (Duration: 25.6ms | Allocations: 13132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 20505)
+Completed 200 OK in 50ms (Views: 40.3ms | ActiveRecord: 1.5ms | Allocations: 23088)
+
+
+Started GET "/" for 127.0.0.1 at 2021-10-15 06:33:38 +0200
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  Rendered members/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 230)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3092)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 3574)
+
+
+Started GET "/members/view_all" for 127.0.0.1 at 2021-10-15 06:33:42 +0200
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"view_all"}
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."active" = ? ORDER BY "members"."rank" ASC[0m  [["active", 1]]
+  ↳ app/views/members/show.html.erb:11
+  Rendered members/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1164)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4034)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 5231)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
