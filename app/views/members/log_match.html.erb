@@ -2,12 +2,14 @@
   <h2> Log Match </h2>
   <div class="field">
     <%= f.label :first_member %><br>
-    <%= f.collection_select :first_member_id, Member.where(active: true), :id, :name %>
+      <%= f.collection_select :first_member_id, Member.where(active: true), :id, :name,
+                              { prompt: "Select First Member" }, class: "browser-default"  %>
   </div>
   <br/>
   <div class="field">
     <%= f.label :second_member %><br>
-    <%= f.collection_select :second_member_id, Member.where(active: true), :id, :name %>
+    <%= f.collection_select :second_member_id, Member.where(active: true), :id, :name,
+                            { prompt: "Select Second Member" }, class: "browser-default"  %>
   </div>
   <br/>
   <p> Select 1 for first member, 2 for second member, 3 for draw</p>
