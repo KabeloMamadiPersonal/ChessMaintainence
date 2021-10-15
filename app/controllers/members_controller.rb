@@ -1,5 +1,7 @@
 class MembersController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     @member = Member.new
   end

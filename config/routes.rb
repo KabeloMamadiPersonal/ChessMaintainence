@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  # resources :users
+
+  # root '/users/sign_up'
+  # GET "/users/sign_up"
+  # root '/devise/sessions#create'
   root 'members#index'
 
   resources :members

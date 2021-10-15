@@ -54,6 +54,7 @@ end
 
 gem "rspec-rails", "4.0.1"
 gem 'materialize-sass'
+gem 'devise'
 # gem 'rspec-rails`, github: 'rspec/rspec-rails', branch: 'rails-6-1-dev'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

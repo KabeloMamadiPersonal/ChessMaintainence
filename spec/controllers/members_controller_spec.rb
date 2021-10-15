@@ -1,7 +1,9 @@
 require 'rails_helper'
 
+
 RSpec.describe MembersController, type: :controller do
   describe 'create member' do
+    before { allow(controller).to receive(:authenticate_user!).and_return(true) }
     it 'create using the parameters' do
       member_count = Member.all.count
       test_name = 'Peter'
